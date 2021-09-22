@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const createPost = createAsyncThunk(
     "post/createPost",
-    async ({ content }) => {
-        return content;
+    async ({ content, selectImage }) => {
+        return {content, selectImage};
     }
 );
 
@@ -23,6 +23,7 @@ export const postSlice = createSlice({
 
         [createPost.fulfilled]: (state, action) => {
             state.postLoading = false;
+            console.log(action.payload)
             state.postList = [...state.postList, action.payload];
         },
     },

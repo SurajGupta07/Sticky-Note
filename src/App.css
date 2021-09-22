@@ -55,10 +55,9 @@
 }
 
 .text-input {
-    min-height: 4rem !important;
+    min-height: 150px !important;
     height: auto !important;
     padding: 5px !important;
-    background: #ffffff;
     border: 1px solid #cbd5dd;
     border-radius: 2px;
     word-wrap: break-word;
@@ -73,7 +72,7 @@
 
 .feed-post {
     margin-top: 1rem;
-    width: 200px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
