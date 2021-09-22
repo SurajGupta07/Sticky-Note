@@ -4,7 +4,7 @@ import { CreateNewPost } from './features/post/pages/CreateNewPost';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <CreateNewPost />
     </div>
   );

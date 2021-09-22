@@ -1,12 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+export const createPost = createAsyncThunk(
+    "post/createPost",
+    async ({ content }) => {
+        return content;
+    }
+);
 
 export const postSlice = createSlice({
     name: "post",
-    initialState: {},
-      
+    initialState: {
+        postList: [],
+    },
+    postLoading: true,
+
     reducers: {},
-  
-    extraReducers: {}
-  });
-  
-  export default postSlice.reducer;
+
+    extraReducers: {
+        [createPost.pending]: (state, action) => {
+            state.postLoading = true;
+        },
+
+        [createPost.fulfilled]: (state, action) => {
+            state.postLoading = false;
+            state.postList = [...state.postList, action.payload];
+        },
+    },
+});
+
+export default postSlice.reducer;
