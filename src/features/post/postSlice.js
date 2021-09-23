@@ -23,7 +23,6 @@ export const postSlice = createSlice({
 
         [createPost.fulfilled]: (state, action) => {
             state.postLoading = false;
-            console.log(action.payload)
             state.postList = [...state.postList, action.payload];
         },
     },

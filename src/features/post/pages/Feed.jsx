@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 export const Feed = () => {
     const posts = useSelector((state) => state.post.postList);
-    console.log(posts)
 
     return (
         <div>
